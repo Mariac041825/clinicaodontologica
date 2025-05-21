@@ -16,7 +16,7 @@ class GestorCita {
         $estado = $cita->obtenerEstado();
         $observaciones = $cita->obtenerObservaciones();
 
-        $sql = "INSERT INTO citas (CitFecha, CitHora, CitPaciente, CitMedico, CitConsultorio, CitEstado, CitObservaciones)
+        $sql = "INSERT INTO cita (CitFecha, CitHora, CitPaciente, CitMedico, CitConsultorio, CitEstado, CitObservaciones)
                 VALUES ('$fecha', '$hora', '$paciente', '$medico', '$consultorio', '$estado', '$observaciones')";
         $this->conexion->consulta($sql);
         $citaId = $this->conexion->obtenerCitaId();
@@ -40,7 +40,7 @@ class GestorCita {
 
     public function consultarCitasPorDocumento($doc) {
         $this->conexion->abrir();
-        $sql = "SELECT * FROM citas WHERE CitPaciente = '$doc' AND CitEstado = 'Solicitada'";
+        $sql = "SELECT * FROM cita WHERE CitPaciente = '$doc' AND CitEstado = 'Solicitada'";
         $this->conexion->consulta($sql);
         $result = $this->conexion->obtenerResult();
         $this->conexion->cerrar();
@@ -83,5 +83,7 @@ class GestorCita {
         $this->conexion->cerrar();
         return $result;
     }
+
+    
 }
 ?>

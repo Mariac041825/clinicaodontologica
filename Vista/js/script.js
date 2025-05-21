@@ -21,6 +21,21 @@ $(document).ready(function () {
         }
     });
 
+    $(document).ready(function () {
+    $("#frmPaciente").dialog({
+        autoOpen: false,
+        height: 310,
+        width: 400,
+        modal: true,
+        buttons: {
+            "Insertar": insertarPaciente,
+            "Cancelar": cancelar
+        }
+    });
+});
+
+    
+
     $("#frmasignar").submit(function (event) {
         var docPaciente = $("#asignarDocumento").val();
         var medico = $("#medico").val();
@@ -42,6 +57,14 @@ $(document).ready(function () {
             event.preventDefault();
         }
     });
+
+    function seleccionarHora() {
+    if ($("#medico").val() == -1) {
+        alert("Debe seleccionar un médico");
+    } else if ($("#fecha").val() == "") {
+        alert("Debe seleccionar una fecha");
+    }
+}
 
   
     $("#frmcancelar").submit(function (event) {

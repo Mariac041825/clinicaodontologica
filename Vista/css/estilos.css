@@ -21,11 +21,10 @@ body {
 
 
 #menu {
-    display: flex;
-    flex-direction: column; 
-    align-items: left; 
-    gap: 10px; 
-    padding: 20px;
+    float: left;
+    width: 120px;
+    background-color: #D4FFFF ;
+
 }
 
 #menu li {
@@ -37,17 +36,19 @@ body {
     width: 150px; 
     text-align: center;
     padding: 12px;
-    background-color: #0075ff;
+    background-color: hsl(212, 100%, 50%);
     color: white;
     font-weight: bold;
     border-radius: 5px;
     text-decoration: none;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 5px rgb(5, 135, 241);
 }
 
-#menu li a:hover {
-    background-color: #005bb5; 
+
+#menu li:hover {
+    background-color: #0b7eca;
 }
+
 
 #contenido {
     border: 1px solid #d3d3d3;
@@ -58,5 +59,11 @@ body {
 #encabezado h1 {
     text-align: center ;
     margin-top: 50px;
-    
+   
+}
+
+div#contenido {
+   border: #01b1f7 1px solid ;
+   margin: 20px 20px 10px 180px;
+   padding: 10px 15px;
 }
